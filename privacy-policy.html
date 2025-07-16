@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy Generator - WebPolicyGenerator</title>
+    <meta
+      name="description"
+      content="Generate a professional GDPR & CCPA compliant privacy policy for your website or app. Free, fast, and privacy-focused."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">WebPolicyGenerator</a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="about" class="nav-link">About</a>
+          <a href="faq" class="nav-link">FAQ</a>
+
+          <div class="nav-buttons">
+            <a href="privacy-policy" class="btn btn-primary">Privacy Policy</a>
+            <a href="cookie-policy" class="btn btn-secondary">Cookie Policy</a>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars icon" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-menu-link">Home</a>
+          <a href="about.html" class="mobile-menu-link">About</a>
+          <a href="faq.html" class="mobile-menu-link">FAQ</a>
+
+          <div
+            style="
+              padding-top: 1rem;
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+            "
+          >
+            <a
+              href="privacy-policy.html"
+              class="btn btn-primary"
+              style="text-align: center"
+            >
+              Privacy Policy Generator
+            </a>
+            <a
+              href="cookie-policy.html"
+              class="btn btn-secondary"
+              style="text-align: center"
+            >
+              Cookie Policy Generator
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <div
+            class="w-20 h-20 mx-auto mb-6"
+            style="
+              background-color: rgba(0, 90, 224, 0.1);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i
+              class="fas fa-shield-alt"
+              style="font-size: 2.5rem; color: var(--primary-500)"
+            ></i>
+          </div>
+          <h1 class="hero-title animate-slide-up">Privacy Policy Generator</h1>
+          <p class="hero-subtitle animate-slide-up">
+            Create GDPR & CCPA Compliant Privacy Policies
+          </p>
+          <p class="hero-description animate-slide-up">
+            Generate a professional privacy policy for your website or app in
+            minutes. Our templates include all necessary provisions for modern
+            privacy regulations.
+          </p>
+        </div>
+      </section>
+
+      <!-- Generator Section -->
+      <section class="py-16" style="background: white">
+        <div class="max-w-6xl mx-auto px-4">
+          <div
+            class="grid grid-cols-1 gap-8"
+            style="grid-template-columns: 1fr"
+          >
+            <!-- Form Section -->
+            <div class="feature-card" style="margin-bottom: 2rem">
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                <i
+                  class="fas fa-edit"
+                  style="margin-right: 0.5rem; color: var(--primary-500)"
+                ></i>
+                Enter Your Business Information
+              </h2>
+
+              <form id="privacy-form" style="display: grid; gap: 1.5rem">
+                <div class="grid grid-cols-1 grid-cols-md-2 gap-4">
+                  <div>
+                    <label
+                      for="businessName"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Business Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="businessName"
+                      required
+                      placeholder="Enter your business name"
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      oninput="updatePolicy()"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="websiteUrl"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Website URL *
+                    </label>
+                    <input
+                      type="url"
+                      id="websiteUrl"
+                      required
+                      placeholder="https://yourwebsite.com"
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      oninput="updatePolicy()"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 grid-cols-md-2 gap-4">
+                  <div>
+                    <label
+                      for="contactEmail"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Contact Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="contactEmail"
+                      required
+                      placeholder="contact@yourwebsite.com"
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      oninput="updatePolicy()"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="businessType"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Business Type *
+                    </label>
+                    <select
+                      id="businessType"
+                      required
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      onchange="updatePolicy()"
+                    >
+                      <option value="">Select business type</option>
+                      <option value="blog">Blog/Personal Website</option>
+                      <option value="ecommerce">E-commerce Store</option>
+                      <option value="saas">SaaS/Software</option>
+                      <option value="app">Mobile App</option>
+                      <option value="service">Service Business</option>
+                      <option value="nonprofit">Non-profit</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Data Collection Practices (Check all that apply)
+                  </label>
+                  <div
+                    class="grid grid-cols-1 grid-cols-md-2 gap-2"
+                    style="margin-top: 0.5rem"
+                  >
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="collectEmail"
+                        onchange="updatePolicy()"
+                      />
+                      <span>Email addresses</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="collectPersonal"
+                        onchange="updatePolicy()"
+                      />
+                      <span>Personal information (name, address)</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="useCookies"
+                        onchange="updatePolicy()"
+                      />
+                      <span>Cookies and tracking</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="useAnalytics"
+                        onchange="updatePolicy()"
+                      />
+                      <span>Website analytics</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="shareThirdParty"
+                        onchange="updatePolicy()"
+                      />
+                      <span>Share data with third parties</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="collectPayment"
+                        onchange="updatePolicy()"
+                      />
+                      <span>Payment information</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="flex gap-4" style="margin-top: 1rem">
+                  <button
+                    type="button"
+                    onclick="generatePolicy()"
+                    class="btn btn-primary btn-large"
+                  >
+                    <i class="fas fa-magic" style="margin-right: 0.5rem"></i>
+                    Generate Privacy Policy
+                  </button>
+                  <button
+                    type="button"
+                    onclick="resetForm()"
+                    class="btn btn-outline"
+                  >
+                    <i class="fas fa-redo" style="margin-right: 0.5rem"></i>
+                    Reset Form
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Generated Policy Section -->
+            <div class="feature-card" id="policy-output" style="display: none">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <h2 class="text-2xl font-bold text-gray-900">
+                  <i
+                    class="fas fa-file-alt"
+                    style="margin-right: 0.5rem; color: var(--secondary-500)"
+                  ></i>
+                  Generated Privacy Policy
+                </h2>
+                <div style="display: flex; gap: 0.5rem">
+                  <button onclick="copyPolicy()" class="btn btn-outline">
+                    <i class="fas fa-copy" style="margin-right: 0.5rem"></i>
+                    Copy
+                  </button>
+                  <button
+                    onclick="downloadPolicy('html')"
+                    class="btn btn-secondary"
+                  >
+                    <i class="fas fa-download" style="margin-right: 0.5rem"></i>
+                    Download HTML
+                  </button>
+                  <button
+                    onclick="downloadPolicy('txt')"
+                    class="btn btn-primary"
+                  >
+                    <i class="fas fa-download" style="margin-right: 0.5rem"></i>
+                    Download TXT
+                  </button>
+                </div>
+              </div>
+
+              <div
+                id="generated-policy"
+                style="
+                  background: #f9fafb;
+                  border: 1px solid var(--gray-200);
+                  border-radius: 0.5rem;
+                  padding: 2rem;
+                  max-height: 500px;
+                  overflow-y: auto;
+                  font-family: Georgia, serif;
+                  line-height: 1.6;
+                "
+              >
+                <!-- Generated policy will appear here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              Why Use Our Privacy Policy Generator?
+            </h2>
+            <p class="text-lg text-gray-600">
+              Professional legal documents designed for modern privacy
+              requirements
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 grid-cols-md-3 gap-8">
+            <div class="text-center feature-card">
+              <div
+                class="feature-icon"
+                style="
+                  background-color: var(--primary-100);
+                  color: var(--primary-500);
+                "
+              >
+                <i class="fas fa-shield-alt icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                GDPR & CCPA Compliant
+              </h3>
+              <p class="text-gray-600">
+                Includes all necessary provisions for European GDPR and
+                California CCPA compliance.
+              </p>
+            </div>
+
+            <div class="text-center feature-card">
+              <div
+                class="feature-icon"
+                style="
+                  background-color: var(--secondary-100);
+                  color: var(--secondary-500);
+                "
+              >
+                <i class="fas fa-bolt icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Instant Generation
+              </h3>
+              <p class="text-gray-600">
+                Generate your privacy policy in seconds with our smart template
+                system.
+              </p>
+            </div>
+
+            <div class="text-center feature-card">
+              <div
+                class="feature-icon"
+                style="background-color: #e0e7ff; color: #7c3aed"
+              >
+                <i class="fas fa-edit icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Fully Customizable
+              </h3>
+              <p class="text-gray-600">
+                Edit and modify the generated policy to fit your specific
+                business needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div>
+            <a href="/" class="footer-brand">WebPolicyGenerator</a>
+            <p class="footer-description">
+              Fast, free, and privacy-focused legal document generation. Create
+              professional privacy policies, terms & conditions, and cookie
+              policies for your website in minutes.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://github.com/webpolicygenerator"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github icon"></i>
+              </a>
+              <a href="https://twitter.com/webpolicygen" aria-label="Twitter">
+                <i class="fab fa-twitter icon"></i>
+              </a>
+              <a
+                href="mailto:contact@webpolicygenerator.com"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope icon"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Generators -->
+          <div class="footer-section">
+            <h3>Generators</h3>
+            <ul class="footer-links">
+              <li><a href="privacy-policy">Privacy Policy</a></li>
+              <li><a href="terms-conditions">Terms & Conditions</a></li>
+              <li><a href="cookie-policy">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-text">
+            © 2024 WebPolicyGenerator. All rights reserved.
+          </div>
+          <div
+            class="footer-bottom-text"
+            style="
+              margin-top: 1rem;
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+            "
+          >
+            Made with <i class="fas fa-heart" style="color: #e53e3e"></i> for
+            privacy compliance
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("menu-icon");
+
+        if (menu.classList.contains("show")) {
+          menu.classList.remove("show");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        } else {
+          menu.classList.add("show");
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        }
+      }
+
+      function updatePolicy() {
+        // Auto-generate as user types
+        const businessName = document.getElementById("businessName").value;
+        if (businessName.length > 2) {
+          generatePolicy();
+        }
+      }
+
+      function generatePolicy() {
+        const businessName = document.getElementById("businessName").value;
+        const websiteUrl = document.getElementById("websiteUrl").value;
+        const contactEmail = document.getElementById("contactEmail").value;
+        const businessType = document.getElementById("businessType").value;
+
+        if (!businessName || !websiteUrl || !contactEmail || !businessType) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        const collectEmail = document.getElementById("collectEmail").checked;
+        const collectPersonal =
+          document.getElementById("collectPersonal").checked;
+        const useCookies = document.getElementById("useCookies").checked;
+        const useAnalytics = document.getElementById("useAnalytics").checked;
+        const shareThirdParty =
+          document.getElementById("shareThirdParty").checked;
+        const collectPayment =
+          document.getElementById("collectPayment").checked;
+
+        const currentDate = new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        let policy = `
+          <h1>Privacy Policy</h1>
+          <p><strong>Effective Date:</strong> ${currentDate}</p>
+          <p><strong>Last Updated:</strong> ${currentDate}</p>
+
+          <h2>1. Introduction</h2>
+          <p>Welcome to ${businessName} ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience on our website ${websiteUrl} and when using our services.</p>
+          <p>This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully.</p>
+
+          <h2>2. Information We Collect</h2>
+          <p>We may collect information about you in a variety of ways. The information we may collect includes:</p>
+          
+          <h3>2.1 Personal Data</h3>
+          <p>Personally identifiable information that you voluntarily give to us when you:</p>
+          <ul>
+            ${collectEmail ? "<li>Subscribe to our newsletter or provide your email address</li>" : ""}
+            ${collectPersonal ? "<li>Fill out forms with your personal information (name, address, phone number)</li>" : ""}
+            ${collectPayment ? "<li>Make a purchase or payment through our services</li>" : ""}
+            <li>Contact us directly</li>
+            <li>Use our services or interact with our website</li>
+          </ul>
+
+          <h3>2.2 Automatically Collected Information</h3>
+          <p>When you visit our website, we may automatically collect certain information about your device and usage patterns:</p>
+          <ul>
+            <li>IP address and browser type</li>
+            <li>Operating system and device information</li>
+            <li>Pages visited and time spent on our website</li>
+            ${useAnalytics ? "<li>Website analytics and usage statistics</li>" : ""}
+            ${useCookies ? "<li>Information collected through cookies and similar technologies</li>" : ""}
+          </ul>
+
+          <h2>3. How We Use Your Information</h2>
+          <p>We use the information we collect for various purposes, including:</p>
+          <ul>
+            <li>Providing and maintaining our services</li>
+            <li>Processing transactions and sending related information</li>
+            <li>Sending administrative information and updates</li>
+            <li>Responding to your comments, questions, and requests</li>
+            <li>Improving our website and services</li>
+            ${useAnalytics ? "<li>Analyzing website usage and trends</li>" : ""}
+            <li>Protecting against fraudulent or illegal activity</li>
+            <li>Complying with legal obligations</li>
+          </ul>
+
+          <h2>4. Information Sharing and Disclosure</h2>
+          <p>We may share your information in the following situations:</p>
+          <ul>
+            <li><strong>With Your Consent:</strong> We may share your information when you give us explicit consent</li>
+            <li><strong>Service Providers:</strong> We may share information with third-party service providers who assist us in operating our website and services</li>
+            ${shareThirdParty ? "<li><strong>Business Partners:</strong> We may share information with trusted business partners as described in this policy</li>" : ""}
+            <li><strong>Legal Requirements:</strong> We may disclose information if required by law or to protect our rights</li>
+            <li><strong>Business Transfers:</strong> Information may be transferred in connection with mergers or acquisitions</li>
+          </ul>
+
+          <h2>5. Data Security</h2>
+          <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, please note that no method of transmission over the internet or electronic storage is 100% secure.</p>
+
+          <h2>6. Your Privacy Rights</h2>
+          <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+          <ul>
+            <li><strong>Access:</strong> Request access to your personal information</li>
+            <li><strong>Rectification:</strong> Request correction of inaccurate information</li>
+            <li><strong>Erasure:</strong> Request deletion of your personal information</li>
+            <li><strong>Portability:</strong> Request transfer of your information</li>
+            <li><strong>Objection:</strong> Object to processing of your personal information</li>
+            <li><strong>Restriction:</strong> Request restriction of processing</li>
+          </ul>
+
+          <h2>7. Cookies and Tracking Technologies</h2>
+          ${
+            useCookies
+              ? `
+            <p>We use cookies and similar tracking technologies to enhance your experience on our website. Cookies are small data files stored on your device. You can control cookie settings through your browser preferences.</p>
+            <p>Types of cookies we may use:</p>
+            <ul>
+              <li>Essential cookies for website functionality</li>
+              <li>Analytics cookies to understand website usage</li>
+              <li>Preference cookies to remember your settings</li>
+              <li>Marketing cookies for advertising purposes</li>
+            </ul>
+          `
+              : "<p>We do not use cookies or tracking technologies on our website.</p>"
+          }
+
+          <h2>8. Third-Party Links</h2>
+          <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+
+          <h2>9. Children's Privacy</h2>
+          <p>Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+
+          <h2>10. International Data Transfers</h2>
+          <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place to protect your information in accordance with applicable data protection laws.</p>
+
+          <h2>11. Changes to This Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. Changes become effective immediately upon posting.</p>
+
+          <h2>12. Contact Information</h2>
+          <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
+          <ul>
+            <li><strong>Email:</strong> ${contactEmail}</li>
+            <li><strong>Website:</strong> ${websiteUrl}</li>
+          </ul>
+
+          <hr style="margin: 2rem 0;">
+          <p><em>This privacy policy was generated using WebPolicyGenerator. Please review and customize as needed for your specific business requirements.</em></p>
+        `;
+
+        document.getElementById("generated-policy").innerHTML = policy;
+        document.getElementById("policy-output").style.display = "block";
+        document
+          .getElementById("policy-output")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      function copyPolicy() {
+        const policyText =
+          document.getElementById("generated-policy").innerText;
+        navigator.clipboard.writeText(policyText).then(() => {
+          alert("Privacy policy copied to clipboard!");
+        });
+      }
+
+      function downloadPolicy(format) {
+        const policyElement = document.getElementById("generated-policy");
+        const businessName =
+          document.getElementById("businessName").value || "Business";
+
+        let content, mimeType, fileName;
+
+        if (format === "html") {
+          content = `<!DOCTYPE html>\n<html>\n<head>\n<title>Privacy Policy - ${businessName}</title>\n<meta charset="UTF-8">\n</head>\n<body>\n${policyElement.innerHTML}\n</body>\n</html>`;
+          mimeType = "text/html";
+          fileName = `privacy-policy-${businessName.toLowerCase().replace(/\s+/g, "-")}.html`;
+        } else {
+          content = policyElement.innerText;
+          mimeType = "text/plain";
+          fileName = `privacy-policy-${businessName.toLowerCase().replace(/\s+/g, "-")}.txt`;
+        }
+
+        const blob = new Blob([content], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function resetForm() {
+        document.getElementById("privacy-form").reset();
+        document.getElementById("policy-output").style.display = "none";
+      }
+
+      // Close mobile menu when clicking on a link
+      document
+        .querySelectorAll(".mobile-menu-link, .mobile-menu .btn")
+        .forEach((link) => {
+          link.addEventListener("click", () => {
+            const menu = document.getElementById("mobile-menu");
+            const icon = document.getElementById("menu-icon");
+            menu.classList.remove("show");
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          });
+        });
+    </script>
+  </body>
+</html>

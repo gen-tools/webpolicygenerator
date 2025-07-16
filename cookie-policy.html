@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Policy Generator - WebPolicyGenerator</title>
+    <meta
+      name="description"
+      content="Generate a comprehensive cookie policy for your website. Ensure GDPR compliance and transparency about your cookie usage."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">WebPolicyGenerator</a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="about" class="nav-link">About</a>
+          <a href="faq" class="nav-link">FAQ</a>
+
+          <div class="nav-buttons">
+            <a href="privacy-policy" class="btn btn-primary">Privacy Policy</a>
+            <a href="cookie-policy" class="btn btn-secondary">Cookie Policy</a>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars icon" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-menu-link">Home</a>
+          <a href="about.html" class="mobile-menu-link">About</a>
+          <a href="faq.html" class="mobile-menu-link">FAQ</a>
+
+          <div
+            style="
+              padding-top: 1rem;
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+            "
+          >
+            <a
+              href="privacy-policy.html"
+              class="btn btn-primary"
+              style="text-align: center"
+            >
+              Privacy Policy Generator
+            </a>
+            <a
+              href="cookie-policy.html"
+              class="btn btn-secondary"
+              style="text-align: center"
+            >
+              Cookie Policy Generator
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <div
+            class="w-20 h-20 mx-auto mb-6"
+            style="
+              background-color: rgba(124, 58, 237, 0.1);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i
+              class="fas fa-cookie-bite"
+              style="font-size: 2.5rem; color: #7c3aed"
+            ></i>
+          </div>
+          <h1 class="hero-title animate-slide-up">Cookie Policy Generator</h1>
+          <p class="hero-subtitle animate-slide-up">
+            Transparent Cookie Usage Policies for GDPR Compliance
+          </p>
+          <p class="hero-description animate-slide-up">
+            Generate a comprehensive cookie policy that explains how your
+            website uses cookies and tracking technologies. Ensure transparency
+            and legal compliance.
+          </p>
+        </div>
+      </section>
+
+      <!-- Generator Section -->
+      <section class="py-16" style="background: white">
+        <div class="max-w-6xl mx-auto px-4">
+          <div
+            class="grid grid-cols-1 gap-8"
+            style="grid-template-columns: 1fr"
+          >
+            <!-- Form Section -->
+            <div class="feature-card" style="margin-bottom: 2rem">
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                <i
+                  class="fas fa-edit"
+                  style="margin-right: 0.5rem; color: #7c3aed"
+                ></i>
+                Enter Your Website Information
+              </h2>
+
+              <form id="cookie-form" style="display: grid; gap: 1.5rem">
+                <div class="grid grid-cols-1 grid-cols-md-2 gap-4">
+                  <div>
+                    <label
+                      for="businessName"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Business Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="businessName"
+                      required
+                      placeholder="Enter your business name"
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      oninput="updateCookiePolicy()"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="websiteUrl"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Website URL *
+                    </label>
+                    <input
+                      type="url"
+                      id="websiteUrl"
+                      required
+                      placeholder="https://yourwebsite.com"
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      oninput="updateCookiePolicy()"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 grid-cols-md-2 gap-4">
+                  <div>
+                    <label
+                      for="contactEmail"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Contact Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="contactEmail"
+                      required
+                      placeholder="contact@yourwebsite.com"
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      oninput="updateCookiePolicy()"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="businessType"
+                      class="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Website Type *
+                    </label>
+                    <select
+                      id="businessType"
+                      required
+                      style="
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid var(--gray-300);
+                        border-radius: 0.5rem;
+                        font-size: 1rem;
+                      "
+                      onchange="updateCookiePolicy()"
+                    >
+                      <option value="">Select website type</option>
+                      <option value="blog">Blog/Personal Website</option>
+                      <option value="ecommerce">E-commerce Store</option>
+                      <option value="saas">SaaS/Software</option>
+                      <option value="app">Web Application</option>
+                      <option value="service">Service Business</option>
+                      <option value="news">News/Media Site</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Cookie Types Used (Check all that apply)
+                  </label>
+                  <div
+                    class="grid grid-cols-1 grid-cols-md-2 gap-2"
+                    style="margin-top: 0.5rem"
+                  >
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="essentialCookies"
+                        onchange="updateCookiePolicy()"
+                        checked
+                        disabled
+                      />
+                      <span
+                        >Essential/Strictly Necessary Cookies (Required)</span
+                      >
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="analyticsCookies"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Analytics/Performance Cookies</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="functionalCookies"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Functional Cookies</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="marketingCookies"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Marketing/Advertising Cookies</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="preferencesCookies"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Preferences/Personalization Cookies</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="socialMediaCookies"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Social Media Cookies</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Third-Party Services (Check all that apply)
+                  </label>
+                  <div
+                    class="grid grid-cols-1 grid-cols-md-2 gap-2"
+                    style="margin-top: 0.5rem"
+                  >
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="googleAnalytics"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Google Analytics</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="googleAds"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Google Ads</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="facebookPixel"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Facebook Pixel</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="youtubeEmbeds"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>YouTube Embeds</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="chatWidgets"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Chat Widgets</span>
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.5rem"
+                    >
+                      <input
+                        type="checkbox"
+                        id="otherThirdParty"
+                        onchange="updateCookiePolicy()"
+                      />
+                      <span>Other Third-Party Services</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="flex gap-4" style="margin-top: 1rem">
+                  <button
+                    type="button"
+                    onclick="generateCookiePolicy()"
+                    class="btn btn-large"
+                    style="background-color: #7c3aed; color: white"
+                  >
+                    <i class="fas fa-magic" style="margin-right: 0.5rem"></i>
+                    Generate Cookie Policy
+                  </button>
+                  <button
+                    type="button"
+                    onclick="resetForm()"
+                    class="btn btn-outline"
+                  >
+                    <i class="fas fa-redo" style="margin-right: 0.5rem"></i>
+                    Reset Form
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Generated Policy Section -->
+            <div class="feature-card" id="cookie-output" style="display: none">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <h2 class="text-2xl font-bold text-gray-900">
+                  <i
+                    class="fas fa-cookie-bite"
+                    style="margin-right: 0.5rem; color: #7c3aed"
+                  ></i>
+                  Generated Cookie Policy
+                </h2>
+                <div style="display: flex; gap: 0.5rem">
+                  <button onclick="copyCookiePolicy()" class="btn btn-outline">
+                    <i class="fas fa-copy" style="margin-right: 0.5rem"></i>
+                    Copy
+                  </button>
+                  <button
+                    onclick="downloadCookiePolicy('html')"
+                    class="btn btn-secondary"
+                  >
+                    <i class="fas fa-download" style="margin-right: 0.5rem"></i>
+                    Download HTML
+                  </button>
+                  <button
+                    onclick="downloadCookiePolicy('txt')"
+                    class="btn btn-primary"
+                  >
+                    <i class="fas fa-download" style="margin-right: 0.5rem"></i>
+                    Download TXT
+                  </button>
+                </div>
+              </div>
+
+              <div
+                id="generated-cookie-policy"
+                style="
+                  background: #f9fafb;
+                  border: 1px solid var(--gray-200);
+                  border-radius: 0.5rem;
+                  padding: 2rem;
+                  max-height: 500px;
+                  overflow-y: auto;
+                  font-family: Georgia, serif;
+                  line-height: 1.6;
+                "
+              >
+                <!-- Generated cookie policy will appear here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              Why Use Our Cookie Policy Generator?
+            </h2>
+            <p class="text-lg text-gray-600">
+              Comprehensive cookie transparency for legal compliance
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 grid-cols-md-3 gap-8">
+            <div class="text-center feature-card">
+              <div
+                class="feature-icon"
+                style="background-color: #e0e7ff; color: #7c3aed"
+              >
+                <i class="fas fa-balance-scale icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                GDPR Compliant
+              </h3>
+              <p class="text-gray-600">
+                Meets European GDPR requirements for cookie consent and
+                transparency.
+              </p>
+            </div>
+
+            <div class="text-center feature-card">
+              <div
+                class="feature-icon"
+                style="
+                  background-color: var(--secondary-100);
+                  color: var(--secondary-500);
+                "
+              >
+                <i class="fas fa-eye icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Complete Transparency
+              </h3>
+              <p class="text-gray-600">
+                Clearly explains all cookie types and their purposes to your
+                users.
+              </p>
+            </div>
+
+            <div class="text-center feature-card">
+              <div
+                class="feature-icon"
+                style="
+                  background-color: var(--primary-100);
+                  color: var(--primary-500);
+                "
+              >
+                <i class="fas fa-cogs icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Easy Integration
+              </h3>
+              <p class="text-gray-600">
+                Ready-to-use policy that integrates seamlessly with your
+                website.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div>
+            <a href="/" class="footer-brand">WebPolicyGenerator</a>
+            <p class="footer-description">
+              Fast, free, and privacy-focused legal document generation. Create
+              professional privacy policies, terms & conditions, and cookie
+              policies for your website in minutes.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://github.com/webpolicygenerator"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github icon"></i>
+              </a>
+              <a href="https://twitter.com/webpolicygen" aria-label="Twitter">
+                <i class="fab fa-twitter icon"></i>
+              </a>
+              <a
+                href="mailto:contact@webpolicygenerator.com"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope icon"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Generators -->
+          <div class="footer-section">
+            <h3>Generators</h3>
+            <ul class="footer-links">
+              <li><a href="privacy-policy">Privacy Policy</a></li>
+              <li><a href="terms-conditions">Terms & Conditions</a></li>
+              <li><a href="cookie-policy">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-text">
+            © 2024 WebPolicyGenerator. All rights reserved.
+          </div>
+          <div
+            class="footer-bottom-text"
+            style="
+              margin-top: 1rem;
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+            "
+          >
+            Made with <i class="fas fa-heart" style="color: #e53e3e"></i> for
+            privacy compliance
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("menu-icon");
+
+        if (menu.classList.contains("show")) {
+          menu.classList.remove("show");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        } else {
+          menu.classList.add("show");
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        }
+      }
+
+      function updateCookiePolicy() {
+        // Auto-generate as user types
+        const businessName = document.getElementById("businessName").value;
+        if (businessName.length > 2) {
+          generateCookiePolicy();
+        }
+      }
+
+      function generateCookiePolicy() {
+        const businessName = document.getElementById("businessName").value;
+        const websiteUrl = document.getElementById("websiteUrl").value;
+        const contactEmail = document.getElementById("contactEmail").value;
+        const businessType = document.getElementById("businessType").value;
+
+        if (!businessName || !websiteUrl || !contactEmail || !businessType) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        // Get cookie types
+        const analyticsCookies =
+          document.getElementById("analyticsCookies").checked;
+        const functionalCookies =
+          document.getElementById("functionalCookies").checked;
+        const marketingCookies =
+          document.getElementById("marketingCookies").checked;
+        const preferencesCookies =
+          document.getElementById("preferencesCookies").checked;
+        const socialMediaCookies =
+          document.getElementById("socialMediaCookies").checked;
+
+        // Get third-party services
+        const googleAnalytics =
+          document.getElementById("googleAnalytics").checked;
+        const googleAds = document.getElementById("googleAds").checked;
+        const facebookPixel = document.getElementById("facebookPixel").checked;
+        const youtubeEmbeds = document.getElementById("youtubeEmbeds").checked;
+        const chatWidgets = document.getElementById("chatWidgets").checked;
+        const otherThirdParty =
+          document.getElementById("otherThirdParty").checked;
+
+        const currentDate = new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        let cookiePolicy = `
+          <h1>Cookie Policy</h1>
+          <p><strong>Effective Date:</strong> ${currentDate}</p>
+          <p><strong>Last Updated:</strong> ${currentDate}</p>
+
+          <h2>1. Introduction</h2>
+          <p>This Cookie Policy explains how ${businessName} ("we," "our," or "us") uses cookies and similar technologies when you visit our website ${websiteUrl} (the "Service"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.</p>
+
+          <h2>2. What Are Cookies?</h2>
+          <p>Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners to make their websites work, or to work more efficiently, as well as to provide reporting information.</p>
+          <p>Cookies set by the website owner are called "first-party cookies." Cookies set by parties other than the website owner are called "third-party cookies." Third-party cookies enable third-party features or functionality to be provided on or through the website.</p>
+
+          <h2>3. Types of Cookies We Use</h2>
+          
+          <h3>3.1 Essential Cookies</h3>
+          <p>These cookies are strictly necessary to provide you with services available through our website and to use some of its features. Because these cookies are strictly necessary to deliver the website, you cannot refuse them without impacting how our site functions.</p>
+          <ul>
+            <li>Session management and security</li>
+            <li>Basic website functionality</li>
+            <li>User authentication and preferences</li>
+          </ul>
+
+          ${
+            analyticsCookies
+              ? `
+          <h3>3.2 Analytics and Performance Cookies</h3>
+          <p>These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website's performance and user experience.</p>
+          <ul>
+            <li>Website traffic analysis</li>
+            <li>Page performance monitoring</li>
+            <li>User behavior patterns</li>
+          </ul>
+          `
+              : ""
+          }
+
+          ${
+            functionalCookies
+              ? `
+          <h3>3.3 Functional Cookies</h3>
+          <p>These cookies enable enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages.</p>
+          <ul>
+            <li>Language preferences</li>
+            <li>User interface customizations</li>
+            <li>Enhanced features and functionality</li>
+          </ul>
+          `
+              : ""
+          }
+
+          ${
+            marketingCookies
+              ? `
+          <h3>3.4 Marketing and Advertising Cookies</h3>
+          <p>These cookies are used to deliver advertisements more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns.</p>
+          <ul>
+            <li>Targeted advertising</li>
+            <li>Ad campaign performance tracking</li>
+            <li>Cross-site behavioral advertising</li>
+          </ul>
+          `
+              : ""
+          }
+
+          ${
+            preferencesCookies
+              ? `
+          <h3>3.5 Preferences and Personalization Cookies</h3>
+          <p>These cookies allow our website to remember information that changes how the website behaves or looks, such as your preferred language or the region you are in.</p>
+          <ul>
+            <li>Language and region preferences</li>
+            <li>Accessibility settings</li>
+            <li>Personalized content delivery</li>
+          </ul>
+          `
+              : ""
+          }
+
+          ${
+            socialMediaCookies
+              ? `
+          <h3>3.6 Social Media Cookies</h3>
+          <p>These cookies are set by social media services that we have added to the site to enable you to share our content with your friends and networks.</p>
+          <ul>
+            <li>Social media sharing functionality</li>
+            <li>Social login features</li>
+            <li>Social media content integration</li>
+          </ul>
+          `
+              : ""
+          }
+
+          <h2>4. Third-Party Services</h2>
+          <p>We use various third-party services that may set cookies on your device:</p>
+          
+          ${
+            googleAnalytics
+              ? `
+          <h3>4.1 Google Analytics</h3>
+          <p>We use Google Analytics to analyze website traffic and user behavior. Google Analytics uses cookies to collect information about how you use our website, which is then used to compile reports and help us improve our site.</p>
+          <p>You can opt-out of Google Analytics by visiting: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a></p>
+          `
+              : ""
+          }
+
+          ${
+            googleAds
+              ? `
+          <h3>4.2 Google Ads</h3>
+          <p>We use Google Ads for online advertising. Google Ads may use cookies to show you relevant advertisements based on your interests and browsing behavior.</p>
+          <p>You can control Google Ads personalization at: <a href="https://adssettings.google.com" target="_blank">Google Ad Settings</a></p>
+          `
+              : ""
+          }
+
+          ${
+            facebookPixel
+              ? `
+          <h3>4.3 Facebook Pixel</h3>
+          <p>We use Facebook Pixel to measure the effectiveness of our advertising and to show you relevant ads on Facebook and Instagram based on your interaction with our website.</p>
+          <p>You can control Facebook ad preferences at: <a href="https://www.facebook.com/settings?tab=ads" target="_blank">Facebook Ad Preferences</a></p>
+          `
+              : ""
+          }
+
+          ${
+            youtubeEmbeds
+              ? `
+          <h3>4.4 YouTube Embeds</h3>
+          <p>We embed YouTube videos on our website. YouTube may set cookies when you interact with these embedded videos.</p>
+          <p>Learn more about YouTube's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">YouTube Privacy Policy</a></p>
+          `
+              : ""
+          }
+
+          ${
+            chatWidgets
+              ? `
+          <h3>4.5 Chat and Communication Widgets</h3>
+          <p>We use chat widgets to provide customer support. These services may set cookies to maintain chat sessions and improve user experience.</p>
+          `
+              : ""
+          }
+
+          ${
+            otherThirdParty
+              ? `
+          <h3>4.6 Other Third-Party Services</h3>
+          <p>We may use additional third-party services that set cookies for various purposes including analytics, marketing, and functionality enhancement.</p>
+          `
+              : ""
+          }
+
+          <h2>5. How Long Do Cookies Stay on Your Device?</h2>
+          <p>The length of time a cookie remains on your device depends on whether it is a "persistent" or "session" cookie:</p>
+          <ul>
+            <li><strong>Session Cookies:</strong> These are deleted when you close your browser</li>
+            <li><strong>Persistent Cookies:</strong> These remain on your device for a set period or until you delete them</li>
+          </ul>
+
+          <h2>6. How to Control Cookies</h2>
+          <p>You have several options for managing cookies:</p>
+          
+          <h3>6.1 Browser Settings</h3>
+          <p>Most web browsers allow you to control cookies through their settings preferences. You can set your browser to:</p>
+          <ul>
+            <li>Delete all cookies</li>
+            <li>Block all cookies</li>
+            <li>Block third-party cookies</li>
+            <li>Notify you when a cookie is set</li>
+          </ul>
+
+          <h3>6.2 Opt-Out Tools</h3>
+          <p>You can use industry opt-out tools to control advertising cookies:</p>
+          <ul>
+            <li><a href="http://www.aboutads.info/choices/" target="_blank">Digital Advertising Alliance Opt-Out Tool</a></li>
+            <li><a href="http://www.youronlinechoices.com/" target="_blank">Your Online Choices (Europe)</a></li>
+            <li><a href="https://youradchoices.ca/choices/" target="_blank">Ad Choices (Canada)</a></li>
+          </ul>
+
+          <h3>6.3 Mobile Device Settings</h3>
+          <p>Mobile devices typically include settings for limiting ad tracking:</p>
+          <ul>
+            <li><strong>iOS:</strong> Settings → Privacy & Security → Tracking</li>
+            <li><strong>Android:</strong> Settings → Privacy → Ads</li>
+          </ul>
+
+          <h2>7. Consequences of Disabling Cookies</h2>
+          <p>If you choose to disable cookies, some features of our website may not function properly. Specifically:</p>
+          <ul>
+            <li>You may not be able to use certain interactive features</li>
+            <li>Your preferences may not be saved</li>
+            <li>Some personalized content may not be available</li>
+            <li>Website performance may be affected</li>
+          </ul>
+
+          <h2>8. Updates to This Cookie Policy</h2>
+          <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by posting the new Cookie Policy on this page with a new effective date.</p>
+
+          <h2>9. Contact Us</h2>
+          <p>If you have any questions about our use of cookies or this Cookie Policy, please contact us:</p>
+          <ul>
+            <li><strong>Email:</strong> ${contactEmail}</li>
+            <li><strong>Website:</strong> ${websiteUrl}</li>
+          </ul>
+
+          <hr style="margin: 2rem 0;">
+          <p><em>This cookie policy was generated using WebPolicyGenerator. Please review and customize as needed for your specific website and cookie usage.</em></p>
+        `;
+
+        document.getElementById("generated-cookie-policy").innerHTML =
+          cookiePolicy;
+        document.getElementById("cookie-output").style.display = "block";
+        document
+          .getElementById("cookie-output")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      function copyCookiePolicy() {
+        const policyText = document.getElementById(
+          "generated-cookie-policy",
+        ).innerText;
+        navigator.clipboard.writeText(policyText).then(() => {
+          alert("Cookie policy copied to clipboard!");
+        });
+      }
+
+      function downloadCookiePolicy(format) {
+        const policyElement = document.getElementById(
+          "generated-cookie-policy",
+        );
+        const businessName =
+          document.getElementById("businessName").value || "Business";
+
+        let content, mimeType, fileName;
+
+        if (format === "html") {
+          content = `<!DOCTYPE html>\n<html>\n<head>\n<title>Cookie Policy - ${businessName}</title>\n<meta charset="UTF-8">\n</head>\n<body>\n${policyElement.innerHTML}\n</body>\n</html>`;
+          mimeType = "text/html";
+          fileName = `cookie-policy-${businessName.toLowerCase().replace(/\s+/g, "-")}.html`;
+        } else {
+          content = policyElement.innerText;
+          mimeType = "text/plain";
+          fileName = `cookie-policy-${businessName.toLowerCase().replace(/\s+/g, "-")}.txt`;
+        }
+
+        const blob = new Blob([content], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function resetForm() {
+        document.getElementById("cookie-form").reset();
+        document.getElementById("cookie-output").style.display = "none";
+        // Re-check essential cookies as they're always required
+        document.getElementById("essentialCookies").checked = true;
+      }
+
+      // Close mobile menu when clicking on a link
+      document
+        .querySelectorAll(".mobile-menu-link, .mobile-menu .btn")
+        .forEach((link) => {
+          link.addEventListener("click", () => {
+            const menu = document.getElementById("mobile-menu");
+            const icon = document.getElementById("menu-icon");
+            menu.classList.remove("show");
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          });
+        });
+    </script>
+  </body>
+</html>

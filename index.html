@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      WebPolicyGenerator - Free Privacy Policy & Legal Document Generator
+    </title>
+    <meta
+      name="description"
+      content="Generate professional privacy policies, terms & conditions, and cookie policies for free. GDPR & CCPA compliant templates for websites and apps."
+    />
+    <meta
+      name="keywords"
+      content="privacy policy generator, terms conditions, cookie policy, GDPR, CCPA, legal documents, free"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">WebPolicyGenerator</a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about" class="nav-link">About</a>
+          <a href="faq" class="nav-link">FAQ</a>
+
+          <div class="nav-buttons">
+            <a href="privacy-policy" class="btn btn-primary">Privacy Policy</a>
+            <a href="cookie-policy" class="btn btn-secondary">Cookie Policy</a>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars icon" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-menu-link active">Home</a>
+          <a href="about.html" class="mobile-menu-link">About</a>
+          <a href="faq.html" class="mobile-menu-link">FAQ</a>
+
+          <div
+            style="
+              padding-top: 1rem;
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+            "
+          >
+            <a
+              href="privacy-policy"
+              class="btn btn-primary"
+              style="text-align: center"
+            >
+              Privacy Policy Generator
+            </a>
+            <a
+              href="cookie-policy"
+              class="btn btn-secondary"
+              style="text-align: center"
+            >
+              Cookie Policy Generator
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+      <!-- Hero Section -->
+      <section class="hero animate-fade-in">
+        <div class="hero-content">
+          <h1 class="hero-title animate-slide-up">
+            Generate Your Privacy Policy, Terms & Cookie Policy
+          </h1>
+          <p class="hero-subtitle animate-slide-up">
+            Fast, Free, & No Signup Needed
+          </p>
+          <p class="hero-description animate-slide-up">
+            Create professional legal documents for your website in minutes.
+            GDPR & CCPA compliant templates for blogs, SaaS, eCommerce, and
+            apps.
+          </p>
+
+          <div
+            class="flex flex-col gap-4 justify-center mb-12 animate-slide-up"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+              align-items: center;
+              margin-bottom: 3rem;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+              "
+            >
+              <a
+                href="privacy-policy"
+                class="btn btn-primary btn-large"
+                style="position: relative; overflow: hidden"
+              >
+                <i
+                  class="fas fa-check icon-sm"
+                  style="margin-right: 0.5rem"
+                ></i>
+                Generate Privacy Policy
+              </a>
+              <a href="terms-conditions" class="btn btn-outline btn-large">
+                <i class="fas fa-code icon-sm" style="margin-right: 0.5rem"></i>
+                Generate Terms & Conditions
+              </a>
+              <a
+                href="cookie-policy"
+                class="btn btn-secondary btn-large"
+                style="position: relative; overflow: hidden"
+              >
+                <i class="fas fa-cog icon-sm" style="margin-right: 0.5rem"></i>
+                Generate Cookie Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ad Placeholder -->
+      <section class="py-8 animate-fade-in">
+        <div class="container">
+          <div
+            style="
+              height: 8rem;
+              background-color: var(--gray-100);
+              border: 1px solid var(--gray-200);
+              border-radius: 0.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: background-color 0.3s ease;
+            "
+          >
+            <div class="text-center" style="color: var(--gray-500)">
+              <div
+                style="
+                  width: 2rem;
+                  height: 2rem;
+                  margin: 0 auto 0.5rem;
+                  opacity: 0.5;
+                "
+              >
+                <div
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--gray-400);
+                    border-radius: 0.25rem;
+                  "
+                ></div>
+              </div>
+              <p class="text-sm">Ad Space</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="py-16" style="background: white">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-12 animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              Generate professional legal documents in just 3 simple steps. No
+              legal expertise required.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 grid-cols-md-3 gap-8">
+            <div class="text-center feature-card animate-slide-up">
+              <div
+                class="feature-icon animate-float"
+                style="
+                  background-color: var(--primary-100);
+                  color: var(--primary-500);
+                "
+              >
+                <span class="text-2xl font-bold">1</span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Choose Your Policy
+              </h3>
+              <p class="text-gray-600">
+                Select Privacy Policy, Terms & Conditions, or Cookie Policy
+                based on your needs.
+              </p>
+            </div>
+
+            <div class="text-center feature-card animate-slide-up">
+              <div
+                class="feature-icon animate-float"
+                style="
+                  background-color: var(--secondary-100);
+                  color: var(--secondary-500);
+                "
+              >
+                <span class="text-2xl font-bold">2</span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Fill Basic Info
+              </h3>
+              <p class="text-gray-600">
+                Enter your business name, website URL, business type, and
+                contact email.
+              </p>
+            </div>
+
+            <div class="text-center feature-card animate-slide-up">
+              <div
+                class="feature-icon animate-float"
+                style="
+                  background-color: var(--primary-100);
+                  color: var(--primary-500);
+                "
+              >
+                <span class="text-2xl font-bold">3</span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Download & Use
+              </h3>
+              <p class="text-gray-600">
+                Generate, preview, copy, or download your legal document
+                instantly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-12 animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              Why Choose WebPolicyGenerator?
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              We believe legal compliance shouldn't be complicated or expensive.
+              Our platform offers the most straightforward way to create
+              professional legal documents for your website or app.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 grid-cols-md-2 gap-8 mb-12">
+            <div class="feature-card animate-slide-up">
+              <div style="display: flex; align-items: flex-start; gap: 1rem">
+                <div
+                  class="feature-icon"
+                  style="
+                    background-color: var(--secondary-100);
+                    color: var(--secondary-600);
+                    margin: 0;
+                    flex-shrink: 0;
+                  "
+                >
+                  <i class="fas fa-lock icon"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Complete Privacy
+                  </h3>
+                  <p class="text-gray-600">
+                    No data storage, no tracking. Everything happens in your
+                    browser.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-card animate-slide-up">
+              <div style="display: flex; align-items: flex-start; gap: 1rem">
+                <div
+                  class="feature-icon"
+                  style="
+                    background-color: var(--primary-100);
+                    color: var(--primary-600);
+                    margin: 0;
+                    flex-shrink: 0;
+                  "
+                >
+                  <i class="fas fa-shield-alt icon"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    GDPR & CCPA Ready
+                  </h3>
+                  <p class="text-gray-600">
+                    Templates include modern privacy law compliance provisions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-card animate-slide-up">
+              <div style="display: flex; align-items: flex-start; gap: 1rem">
+                <div
+                  class="feature-icon"
+                  style="
+                    background-color: #e0e7ff;
+                    color: #7c3aed;
+                    margin: 0;
+                    flex-shrink: 0;
+                  "
+                >
+                  <i class="fas fa-bolt icon"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Instant Generation
+                  </h3>
+                  <p class="text-gray-600">
+                    Professional documents ready in seconds, not days or weeks.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-card animate-slide-up">
+              <div style="display: flex; align-items: flex-start; gap: 1rem">
+                <div
+                  class="feature-icon"
+                  style="
+                    background-color: #fed7d7;
+                    color: #e53e3e;
+                    margin: 0;
+                    flex-shrink: 0;
+                  "
+                >
+                  <i class="fas fa-heart icon"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    Always Free
+                  </h3>
+                  <p class="text-gray-600">
+                    No hidden fees, premium plans, or upgrade pressure. Forever
+                    free.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Features Section -->
+      <section class="py-16" style="background: white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12 animate-slide-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              Everything You Need
+            </h2>
+            <p class="text-lg text-gray-600">
+              Professional features that make legal compliance simple
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 grid-cols-md-3 gap-8">
+            <div class="text-center feature-card animate-slide-up">
+              <div
+                class="feature-icon"
+                style="
+                  background-color: var(--primary-100);
+                  color: var(--primary-500);
+                "
+              >
+                <i class="fas fa-bolt icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Lightning Fast
+              </h3>
+              <p class="text-gray-600">
+                Generate professional policies in under 60 seconds. No waiting,
+                no delays.
+              </p>
+            </div>
+
+            <div class="text-center feature-card animate-slide-up">
+              <div
+                class="feature-icon"
+                style="
+                  background-color: var(--secondary-100);
+                  color: var(--secondary-500);
+                "
+              >
+                <i class="fas fa-check icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Multi-Format Export
+              </h3>
+              <p class="text-gray-600">
+                Copy, download as TXT/HTML, or preview in a clean, formatted
+                view.
+              </p>
+            </div>
+
+            <div class="text-center feature-card animate-slide-up">
+              <div
+                class="feature-icon"
+                style="
+                  background-color: var(--primary-100);
+                  color: var(--primary-500);
+                "
+              >
+                <i class="fas fa-cog icon-lg"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Fully Customizable
+              </h3>
+              <p class="text-gray-600">
+                Edit and modify the generated text to perfectly fit your
+                business needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Brand Section -->
+          <div>
+            <a href="/" class="footer-brand">WebPolicyGenerator</a>
+            <p class="footer-description">
+              Fast, free, and privacy-focused legal document generation. Create
+              professional privacy policies, terms & conditions, and cookie
+              policies for your website in minutes.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://github.com/webpolicygenerator"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github icon"></i>
+              </a>
+              <a href="https://twitter.com/webpolicygen" aria-label="Twitter">
+                <i class="fab fa-twitter icon"></i>
+              </a>
+              <a
+                href="mailto:contact@webpolicygenerator.com"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope icon"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Generators -->
+          <div class="footer-section">
+            <h3>Generators</h3>
+            <ul class="footer-links">
+              <li><a href="privacy-policy">Privacy Policy</a></li>
+              <li><a href="terms-conditions">Terms & Conditions</a></li>
+              <li><a href="cookie-policy">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-text">
+            © 2024 WebPolicyGenerator. All rights reserved.
+          </div>
+          <div
+            class="footer-bottom-text"
+            style="
+              margin-top: 1rem;
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+            "
+          >
+            Made with <i class="fas fa-heart" style="color: #e53e3e"></i> for
+            privacy compliance
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("menu-icon");
+
+        if (menu.classList.contains("show")) {
+          menu.classList.remove("show");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        } else {
+          menu.classList.add("show");
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        }
+      }
+
+      // Close mobile menu when clicking on a link
+      document
+        .querySelectorAll(".mobile-menu-link, .mobile-menu .btn")
+        .forEach((link) => {
+          link.addEventListener("click", () => {
+            const menu = document.getElementById("mobile-menu");
+            const icon = document.getElementById("menu-icon");
+            menu.classList.remove("show");
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          });
+        });
+
+      // Add animation delays for staggered effects
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".animate-slide-up");
+        animatedElements.forEach((element, index) => {
+          element.style.animationDelay = `${index * 0.1}s`;
+        });
+      });
+    </script>
+  </body>
+</html>
