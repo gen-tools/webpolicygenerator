@@ -1,0 +1,24 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners for iOS -->
+  <rect width="180" height="180" rx="20" fill="#005AE0"/>
+  
+  <!-- Document -->
+  <rect x="50" y="45" width="55" height="75" rx="4" fill="white"/>
+  
+  <!-- Document Lines -->
+  <rect x="60" y="60" width="35" height="4" rx="2" fill="#E5E7EB"/>
+  <rect x="60" y="70" width="28" height="4" rx="2" fill="#E5E7EB"/>
+  <rect x="60" y="80" width="35" height="4" rx="2" fill="#E5E7EB"/>
+  <rect x="60" y="90" width="20" height="4" rx="2" fill="#E5E7EB"/>
+  <rect x="60" y="100" width="32" height="4" rx="2" fill="#E5E7EB"/>
+  
+  <!-- Shield -->
+  <path d="M110 55C110 55 120 50 135 55C135 55 135 70 135 85C135 105 125 115 110 120C95 115 80 105 80 85C80 70 80 55 80 55C95 50 110 55 110 55Z" fill="#00C896"/>
+  
+  <!-- Large Check Mark -->
+  <path d="M95 80L107 92L125 74" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Document Corner Fold -->
+  <path d="M85 45L105 45L105 65L85 45Z" fill="#F3F4F6"/>
+  <path d="M85 45L105 65L105 45H85Z" fill="#E5E7EB"/>
+</svg>
