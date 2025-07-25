@@ -1,0 +1,9 @@
+# Netlify redirects
+/privacy-policy.html  /privacy-policy/  301
+/cookie-policy.html   /cookie-policy/   301
+/terms-conditions.html /terms-conditions/ 301
+/about.html          /about/           301
+/faq.html            /faq/             301
+
+# SPA fallback for React routes
+/*                   /index.html       200
