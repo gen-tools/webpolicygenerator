@@ -1,23 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Favicon and Manifest -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- SEO Meta Tags -->
-    <title>Free Privacy Policy Generator | Terms & Conditions | Cookie Policy Generator</title>
-    <meta name="description" content="Generate professional privacy policies, terms & conditions, and cookie policies for free. GDPR & CCPA compliant templates. No signup required." />
-    <meta name="keywords" content="privacy policy generator, terms and conditions generator, cookie policy generator, GDPR compliant, CCPA compliant, free legal documents" />
-    <meta name="author" content="WebPolicyGenerator" />
-    <meta name="robots" content="index, follow" />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="l43nhBYjnhQRHsw_pUfMstR7DOKgFq2HLGLq8pAi5j8" />
-
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQY99NXJM7"></script>
     <script>
@@ -26,46 +15,220 @@
       gtag('js', new Date());
       gtag('config', 'G-ZQY99NXJM7');
     </script>
-
+    
+    <!-- SEO Meta Tags -->
+    <title>Free Privacy Policy Generator | Terms & Conditions | Cookie Policy Generator</title>
+    <meta name="description" content="Generate professional privacy policies, terms & conditions, and cookie policies for free. GDPR & CCPA compliant templates. No signup required." />
+    <meta name="keywords" content="privacy policy generator, terms and conditions generator, cookie policy generator, GDPR compliant, CCPA compliant, free legal documents" />
+    <meta name="robots" content="index, follow" />
+    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://webpolicygenerator-tool.vercel.app/" />
-
+    
     <!-- Open Graph Meta Tags -->
-    <meta property="og:site_name" content="WebPolicyGenerator" />
     <meta property="og:title" content="Free Privacy Policy Generator | Terms & Conditions | Cookie Policy Generator" />
     <meta property="og:description" content="Generate professional privacy policies, terms & conditions, and cookie policies for free. GDPR & CCPA compliant templates. No signup required." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://webpolicygenerator.com/" />
-    <meta property="og:image" content="https://webpolicygenerator.com/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="WebPolicyGenerator - Free Legal Document Generator" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@webpolicygen" />
-    <meta name="twitter:creator" content="@webpolicygen" />
-    <meta name="twitter:title" content="Free Privacy Policy Generator | Terms & Conditions | Cookie Policy Generator" />
-    <meta name="twitter:description" content="Generate professional privacy policies, terms & conditions, and cookie policies for free. GDPR & CCPA compliant templates. No signup required." />
-    <meta name="twitter:image" content="https://webpolicygenerator.com/twitter-image.png" />
-    <meta name="twitter:image:alt" content="WebPolicyGenerator - Free Legal Document Generator" />
-
-    <!-- Favicon and Icons -->
+    <meta property="og:url" content="https://webpolicygenerator-tool.vercel.app/" />
+    
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Theme and App Meta Tags -->
-    <meta name="theme-color" content="#2563eb" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="application-name" content="WebPolicyGenerator" />
-  </head>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Navigation */
+        .nav { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; color: #2563eb; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #4b5563; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #2563eb; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 0; text-align: center; }
+        .hero-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; }
+        .hero p { font-size: 1.25rem; margin-bottom: 40px; opacity: 0.9; }
+        
+        /* CTA Buttons matching the uploaded image */
+        .cta-button {
+            background: #2563eb;
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin: 10px;
+            min-height: 52px;
+        }
+        .cta-button:hover { 
+            background: #1d4ed8; 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+        .cta-button i { font-size: 18px; }
+        
+        /* Features Grid */
+        .features { padding: 80px 0; background: #f8f9fa; }
+        .features-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .features h2 { text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: #1f2937; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .feature-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; color: #2563eb; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #1f2937; }
+        .feature-card p { color: #6b7280; }
+        
+        /* How It Works */
+        .how-it-works { padding: 80px 0; }
+        .how-it-works-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .how-it-works h2 { text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: #1f2937; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .step { text-align: center; }
+        .step-number { width: 60px; height: 60px; background: #2563eb; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 20px; }
+        .step h3 { font-size: 1.25rem; margin-bottom: 15px; color: #1f2937; }
+        .step p { color: #6b7280; }
+        
+        /* Footer */
+        .footer { background: #1f2937; color: white; padding: 40px 0; text-align: center; }
+        .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+        .footer-links a { color: #d1d5db; text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: white; }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .features-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">WebPolicyGenerator</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/terms-conditions/">Terms & Conditions</a>
+                <a href="/cookie-policy/">Cookie Policy</a>
+                <a href="/about/">About</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+        </div>
+    </nav>
 
-  <body>
-    <div id="root"></div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>Free Legal Document Generator</h1>
+            <p>Generate professional privacy policies, terms & conditions, and cookie policies in seconds. GDPR & CCPA compliant templates.</p>
+            <div>
+                <a href="/privacy-policy/" class="cta-button">
+                    ✓ Generate Privacy Policy
+                </a>
+                <a href="/terms-conditions/" class="cta-button">
+                    ✓ Generate Terms & Conditions
+                </a>
+                <a href="/cookie-policy/" class="cta-button">
+                    ✓ Generate Cookie Policy
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <script type="module" src="/client/App.tsx"></script>
-  </body>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2>Why Choose Our Generator?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3>Completely Free</h3>
+                    <p>Generate unlimited legal documents at no cost. No hidden fees, no subscription required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Generation</h3>
+                    <p>Get your customized legal documents in seconds. Simply fill out our forms and download immediately.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>GDPR & CCPA Compliant</h3>
+                    <p>All templates are designed to meet major privacy regulations including GDPR and CCPA requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Professional Quality</h3>
+                    <p>Our templates are crafted by legal professionals and regularly updated to meet current standards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>We don't store your information. All processing happens locally in your browser for maximum privacy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Works for Everything</h3>
+                    <p>Perfect for websites, mobile apps, SaaS platforms, e-commerce stores, and blogs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="how-it-works-container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Document</h3>
+                    <p>Select the type of legal document you need: Privacy Policy, Terms & Conditions, or Cookie Policy.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Fill Out the Form</h3>
+                    <p>Provide basic information about your business, website, or app. The form takes just a few minutes to complete.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Generate & Download</h3>
+                    <p>Click generate to create your customized document. Copy the text or download it in your preferred format.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Implement & Comply</h3>
+                    <p>Add the generated document to your website or app and ensure your business meets legal requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/terms-conditions/">Terms & Conditions</a>
+                <a href="/cookie-policy/">Cookie Policy</a>
+                <a href="/about/">About</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+            <p>&copy; 2024 WebPolicyGenerator. All rights reserved. | Making legal compliance simple and accessible.</p>
+        </div>
+    </footer>
+</body>
 </html>
