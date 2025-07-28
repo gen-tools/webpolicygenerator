@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://webpolicygenerator-tool.vercel.app/sitemap.xml
+
+# Block access to admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all bots to crawl the site
+# This is a public tool that should be indexed
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
