@@ -56,12 +56,76 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQY99NXJM7"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-ZQY99NXJM7');
+// Handle Grammarly extension errors
+if (typeof window !== 'undefined') {
+  const originalError = console.error;
+  console.error = function() {
+    // Filter out Grammarly permission errors
+    if (arguments[0] && 
+        arguments[0].message === 'permission error' && 
+        arguments[0].originalError &&
+        arguments[0].originalError.stack &&
+        arguments[0].originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
+      return;
+    }
+    originalError.apply(console, arguments);
+  };
+
+  window.addEventListener('error', event => {
+    if (event.error && 
+        event.error.message === 'permission error' && 
+        event.error.stack &&
+        event.error.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
+      event.preventDefault();
+    }
+  });
+
+  window.addEventListener('unhandledrejection', event => {
+    if (event.reason && 
+        event.reason.message === 'permission error' && 
+        event.reason.originalError &&
+        event.reason.originalError.stack &&
+        event.reason.originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
+      event.preventDefault();
+    }
+  });
+}
+   </script>
+   <script>
+    if (typeof window !== 'undefined') {
+      const originalError = console.error;
+      
+      console.error = function() {
+        if (arguments[0] && 
+            arguments[0].message === 'permission error' && 
+            arguments[0].originalError &&
+            arguments[0].originalError.stack &&
+            arguments[0].originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
+          return;
+        }
+        originalError.apply(console, arguments);
+      };
+
+      window.addEventListener('error', event => {
+        if (event.error && 
+            event.error.message === 'permission error' && 
+            event.error.stack &&
+            event.error.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
+          event.preventDefault();
+        }
+      });
+
+      window.addEventListener('unhandledrejection', event => {
+        if (event.reason && 
+            event.reason.message === 'permission error' && 
+            event.reason.originalError &&
+            event.reason.originalError.stack &&
+            event.reason.originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
+          event.preventDefault();
+        }
+      });
+    }
     </script>
-  
     <script>
         window.addEventListener('unhandledrejection', event => {
         if (event.reason && 
@@ -72,6 +136,7 @@
      }
    });
    </script>
+
     <script>
       const originalWarn = console.warn;
       console.warn = function(...args) {
