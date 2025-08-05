@@ -56,95 +56,51 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQY99NXJM7"></script>
     <script>
-// Handle Grammarly extension errors
-if (typeof window !== 'undefined') {
-  const originalError = console.error;
-  console.error = function() {
-    // Filter out Grammarly permission errors
-    if (arguments[0] && 
-        arguments[0].message === 'permission error' && 
-        arguments[0].originalError &&
-        arguments[0].originalError.stack &&
-        arguments[0].originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
-      return;
-    }
-    originalError.apply(console, arguments);
-  };
+        // Consolidated error handling
+        if (typeof window !== 'undefined') {
+            const grammarlyId = 'ofpnmcalabcbjgholdjcjblkibolbppb';
+            
+            // Handle console errors
+            const originalError = console.error;
+            console.error = function() {
+                if (arguments[0] && 
+                    arguments[0].message === 'permission error' && 
+                    arguments[0].stack && 
+                    arguments[0].stack.includes(grammarlyId)) {
+                    return;
+                }
+                originalError.apply(console, arguments);
+            };
 
-  window.addEventListener('error', event => {
-    if (event.error && 
-        event.error.message === 'permission error' && 
-        event.error.stack &&
-        event.error.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
-      event.preventDefault();
-    }
-  });
+            // Handle window errors
+            window.addEventListener('error', event => {
+                if (event.error && 
+                    event.error.message === 'permission error' && 
+                    event.error.stack && 
+                    event.error.stack.includes(grammarlyId)) {
+                    event.preventDefault();
+                }
+            });
 
-  window.addEventListener('unhandledrejection', event => {
-    if (event.reason && 
-        event.reason.message === 'permission error' && 
-        event.reason.originalError &&
-        event.reason.originalError.stack &&
-        event.reason.originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
-      event.preventDefault();
-    }
-  });
-}
-   </script>
-   <script>
-    if (typeof window !== 'undefined') {
-      const originalError = console.error;
-      
-      console.error = function() {
-        if (arguments[0] && 
-            arguments[0].message === 'permission error' && 
-            arguments[0].originalError &&
-            arguments[0].originalError.stack &&
-            arguments[0].originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
-          return;
+            // Handle promise rejections
+            window.addEventListener('unhandledrejection', event => {
+                if (event.reason && 
+                    event.reason.message === 'permission error' && 
+                    event.reason.stack && 
+                    event.reason.stack.includes(grammarlyId)) {
+                    event.preventDefault();
+                }
+            });
         }
-        originalError.apply(console, arguments);
-      };
-
-      window.addEventListener('error', event => {
-        if (event.error && 
-            event.error.message === 'permission error' && 
-            event.error.stack &&
-            event.error.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
-          event.preventDefault();
-        }
-      });
-
-      window.addEventListener('unhandledrejection', event => {
-        if (event.reason && 
-            event.reason.message === 'permission error' && 
-            event.reason.originalError &&
-            event.reason.originalError.stack &&
-            event.reason.originalError.stack.includes('ofpnmcalabcbjgholdjcjblkibolbppb')) {
-          event.preventDefault();
-        }
-      });
-    }
     </script>
     <script>
-        window.addEventListener('unhandledrejection', event => {
-        if (event.reason && 
-        event.reason.message === 'permission error' &&
-        event.reason.originalError) {
-        event.preventDefault();
-        console.log('Suppressed extension permission error');
-     }
-   });
-   </script>
-
-    <script>
-      const originalWarn = console.warn;
-      console.warn = function(...args) {
-      if (args[0] && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
-      return;
-   }
-     originalWarn.apply(console, args);
-  };
+        const originalWarn = console.warn;
+        console.warn = function(...args) {
+            if (args[0] && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
+                return;
+            }
+            originalWarn.apply(console, args);
+        };
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -409,6 +365,16 @@ if (typeof window !== 'undefined') {
         .download-btn:hover {
             background: linear-gradient(135deg, #047857, #065f46);
             transform: translateY(-2px);
+        }
+
+        /* Consistent button glow effect */
+        .generator-card button {
+            transition: all 0.3s ease;
+        }
+        
+        .generator-card button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
         }
     </style>
 </head>
@@ -1017,18 +983,18 @@ if (typeof window !== 'undefined') {
             currentDocument = null;
         }
         
-       function generateDocument() {
-    let documentContent = '';
-    let fileName = 'document';
-    
-    switch(currentGeneratorType) {
-        case 'privacy':
-            const websiteName = document.getElementById('website-name')?.value || 'Your Business';
-            const websiteUrl = document.getElementById('website-url')?.value || 'https://example.com';
-            const businessType = document.getElementById('business-type')?.value || 'business';
-            const contactEmail = document.getElementById('contact-email')?.value || `privacy@${websiteUrl.replace('https://', '').replace('http://', '')}`;
+        function generateDocument() {
+            let documentContent = '';
+            let fileName = 'document';
             
-            documentContent = `PRIVACY POLICY FOR ${websiteName.toUpperCase()}
+            switch(currentGeneratorType) {
+                case 'privacy':
+                    const websiteName = document.getElementById('website-name')?.value || 'Your Business';
+                    const websiteUrl = document.getElementById('website-url')?.value || 'https://example.com';
+                    const businessType = document.getElementById('business-type')?.value || 'business';
+                    const contactEmail = document.getElementById('contact-email')?.value || `privacy@${websiteUrl.replace('https://', '').replace('http://', '')}`;
+                    
+                    documentContent = `PRIVACY POLICY FOR ${websiteName.toUpperCase()}
 
 Effective Date: ${new Date().toLocaleDateString()}
 
@@ -1116,17 +1082,17 @@ If you no longer wish to receive correspondence, emails, or other communications
 If you have questions or comments about this Privacy Policy, please contact us at:
 Email: ${contactEmail}
 Website: ${websiteUrl}`;
-            fileName = 'privacy-policy.txt';
-            break;
-            
-        case 'terms':
-            const companyName = document.getElementById('company-name')?.value || 'Your Company';
-            const termsUrl = document.getElementById('terms-url')?.value || 'https://example.com';
-            const serviceDescription = document.getElementById('service-description')?.value || 'online services';
-            const userRestrictions = document.getElementById('user-restrictions')?.value || 'No specific restrictions';
-            const governingLaw = document.getElementById('governing-law')?.value || 'United States';
-            
-            documentContent = `TERMS OF SERVICE FOR ${companyName.toUpperCase()}
+                    fileName = 'privacy-policy.txt';
+                    break;
+                    
+                case 'terms':
+                    const companyName = document.getElementById('company-name')?.value || 'Your Company';
+                    const termsUrl = document.getElementById('terms-url')?.value || 'https://example.com';
+                    const serviceDescription = document.getElementById('service-description')?.value || 'online services';
+                    const userRestrictions = document.getElementById('user-restrictions')?.value || 'No specific restrictions';
+                    const governingLaw = document.getElementById('governing-law')?.value || 'United States';
+                    
+                    documentContent = `TERMS OF SERVICE FOR ${companyName.toUpperCase()}
 
 Effective Date: ${new Date().toLocaleDateString()}
 
@@ -1260,18 +1226,18 @@ If any complaint with us is not satisfactorily resolved, you can contact the Com
 In order to resolve a complaint regarding the Service or to receive further information regarding use of the Service, please contact us at:
 ${companyName}
 ${termsUrl}`;
-            fileName = 'terms-of-service.txt';
-            break;
-            
-        case 'return':
-            const businessName = document.getElementById('business-name')?.value || 'Your Online Store';
-            const returnUrl = document.getElementById('return-url')?.value || 'https://example.com';
-            const returnPeriod = document.getElementById('return-period')?.value || '30';
-            const refundMethod = document.getElementById('refund-method')?.value || 'original';
-            const returnConditions = document.getElementById('return-conditions')?.value || 'Items must be unused and in the same condition that you received them. They must also be in the original packaging.';
-            const returnShipping = document.querySelector('input[name="shipping"]:checked')?.value || 'customer';
-            
-            documentContent = `RETURN AND REFUND POLICY FOR ${businessName.toUpperCase()}
+                    fileName = 'terms-of-service.txt';
+                    break;
+                    
+                case 'return':
+                    const businessName = document.getElementById('business-name')?.value || 'Your Online Store';
+                    const returnUrl = document.getElementById('return-url')?.value || 'https://example.com';
+                    const returnPeriod = document.getElementById('return-period')?.value || '30';
+                    const refundMethod = document.getElementById('refund-method')?.value || 'original';
+                    const returnConditions = document.getElementById('return-conditions')?.value || 'Items must be unused and in the same condition that you received them. They must also be in the original packaging.';
+                    const returnShipping = document.querySelector('input[name="shipping"]:checked')?.value || 'customer';
+                    
+                    documentContent = `RETURN AND REFUND POLICY FOR ${businessName.toUpperCase()}
 
 Effective Date: ${new Date().toLocaleDateString()}
 
@@ -1361,11 +1327,11 @@ At ${businessName}, we want you to be completely satisfied with your purchase. I
 For questions about our return policy, or to initiate a return, please contact us at:
 Email: returns@${returnUrl.replace('https://', '').replace('http://', '')}
 Website: ${returnUrl}`;
-            fileName = 'return-policy.txt';
-            break;
-            
-        default:
-            documentContent = `CUSTOM LEGAL DOCUMENT
+                    fileName = 'return-policy.txt';
+                    break;
+                    
+                default:
+                    documentContent = `CUSTOM LEGAL DOCUMENT
 
 Effective Date: ${new Date().toLocaleDateString()}
 
@@ -1433,22 +1399,23 @@ For questions about these Terms, please contact us at:
 [Your Company Address]
 [Your Contact Email]
 [Your Company Website]`;
-            fileName = 'legal-document.txt';
-    }
-    
-    // Store the document content and file name for download
-    currentDocument = {
-        content: documentContent,
-        fileName: fileName
-    };
-    
-    // Show the preview
-    document.getElementById('document-preview').textContent = documentContent;
-    document.getElementById('document-preview-container').classList.remove('hidden');
-    
-    // Scroll to preview
-    document.getElementById('document-preview-container').scrollIntoView({ behavior: 'smooth' });
-}
+                    fileName = 'legal-document.txt';
+            }
+            
+            // Store the document content and file name for download
+            currentDocument = {
+                content: documentContent,
+                fileName: fileName
+            };
+            
+            // Show the preview
+            document.getElementById('document-preview').textContent = documentContent;
+            document.getElementById('document-preview-container').classList.remove('hidden');
+            
+            // Scroll to preview
+            document.getElementById('document-preview-container').scrollIntoView({ behavior: 'smooth' });
+        }
+        
         function downloadDocument() {
             if (!currentDocument) return;
             
