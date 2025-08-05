@@ -52,8 +52,7 @@
             "priceCurrency": "USD"
         }
     }
-    </script>
-    
+    </script>  
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQY99NXJM7"></script>
     <script>
@@ -62,7 +61,26 @@
         gtag('js', new Date());
         gtag('config', 'G-ZQY99NXJM7');
     </script>
-    
+  
+    <script>
+        window.addEventListener('unhandledrejection', event => {
+        if (event.reason && 
+        event.reason.message === 'permission error' &&
+        event.reason.originalError) {
+        event.preventDefault();
+        console.log('Suppressed extension permission error');
+     }
+   });
+   </script>
+    <script>
+      const originalWarn = console.warn;
+      console.warn = function(...args) {
+      if (args[0] && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
+      return;
+   }
+     originalWarn.apply(console, args);
+  };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
