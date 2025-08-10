@@ -539,43 +539,42 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 animate-fade-in">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-br from-blue-800 via-blue-900 to-purple-900 rounded-lg flex items-center justify-center animate-pulse-glow shadow-lg">
-                        <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 6 L8 26 Q8 27 9 27 L22 27 Q23 27 23 26 L23 11 L18 6 Z" fill="white" opacity="0.9"/>
-                            <path d="M25.5 8.5 C25.5 7.5 24.8 6.8 24 6.8 C23.2 6.8 22.5 7.5 22.5 8.5 L22.5 13 C22.5 16.2 23.4 17.5 24 17.5 C24.6 17.5 25.5 16.2 25.5 13 Z" fill="#fbbf24"/>
-                            <path d="M23.2 11.8 L23.8 12.4 L25 11.2" stroke="white" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <a href="https://webpolicygenerator-tool.vercel.app/">
-                   <span class="text-xl font-bold text-gray-900">WebPolicyGenerator</span>
-                </a>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Home</a>
-                    <a href="#generators" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Generators</a>
-                    <a href="faq/" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">FAQ</a>
-                    <a href="about/" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">About</a>
-                    <a href="contact/" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-primary-600 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    <nav>
+        <div class="nav-container">
+            <a href="https://webpolicygenerator-tool.vercel.app/" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 6 L8 26 Q8 27 9 27 L22 27 Q23 27 23 26 L23 11 L18 6 Z" fill="white" opacity="0.9"/>
+                        <path d="M25.5 8.5 C25.5 7.5 24.8 6.8 24 6.8 C23.2 6.8 22.5 7.5 22.5 8.5 L22.5 13 C22.5 16.2 23.4 17.5 24 17.5 C24.6 17.5 25.5 16.2 25.5 13 Z" fill="#fbbf24"/>
+                        <path d="M23.2 11.8 L23.8 12.4 L25 11.2" stroke="white" stroke-width="0.6" fill="none" stroke-linecap="round"/>
                     </svg>
-                </button>
+                </div>
+                <div class="logo-text">WebPolicyGenerator</div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="https://webpolicygenerator-tool.vercel.app/" class="nav-link">Home</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/#generators" class="nav-link">Generators</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/faq/" class="nav-link active">FAQ</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/about/" class="nav-link">About</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/contact/" class="nav-link">Contact</a>
             </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
+        
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden bg-white/90 backdrop-blur-md">
-            <div class="px-4 py-4 space-y-4">
-                <a href="#home" class="block text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">Home</a>
-                <a href="#generators" class="block text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">Generators</a>
-                <a href="faq/" class="block text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">FAQ</a>
-                <a href="about/" class="block text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">About</a>
-                <a href="contact/" class="block text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">Contact</a>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-links">
+                <a href="https://webpolicygenerator-tool.vercel.app/" class="nav-link">Home</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/#generators" class="nav-link">Generators</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/faq/" class="nav-link active">FAQ</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/about/" class="nav-link">About</a>
+                <a href="https://webpolicygenerator-tool.vercel.app/contact/" class="nav-link">Contact</a>
             </div>
         </div>
     </nav>
