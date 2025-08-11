@@ -97,78 +97,49 @@
     <link rel="stylesheet" href="/tailwind.css">
 
     <style>
-        @keyframes fadeIn {
-            '0%': { opacity: '0' },
-            '100%': { opacity: '1' }
-        }
-        @keyframes slideUp {
-            '0%': { transform: 'translateY(30px)', opacity: '0' },
-            '100%': { transform: 'translateY(0)', opacity: '1' }
-        }
-        @keyframes bounceIn {
-            '0%': { transform: 'scale(0.3)', opacity: '0' },
-            '50%': { transform: 'scale(1.05)', opacity: '0.8' },
-            '70%': { transform: 'scale(0.9)', opacity: '0.9' },
-            '100%': { transform: 'scale(1)', opacity: '1' }
-        }
-        @keyframes float {
-            '0%, 100%': { transform: 'translateY(0px)' },
-            '50%': { transform: 'translateY(-10px)' }
-        }
-        @keyframes pulseGlow {
-            '0%, 100%': { boxShadow: '0 0 5px rgba(14, 165, 233, 0.5)' },
-            '50%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.8)' }
-        }
-        @keyframes gradient {
-            '0%, 100%': { background-position: '0% 50%' },
-            '50%': { background-position: '100% 50%' }
-        }
+        @keyframes fadeIn { '0%': { opacity: '0' } '100%': { opacity: '1' } }
+        @keyframes slideUp { '0%': { transform: 'translateY(30px)', opacity: '0' } '100%': { transform: 'translateY(0)', opacity: '1' } }
+        @keyframes bounceIn { '0%': { transform: 'scale(0.3)', opacity: '0' } '50%': { transform: 'scale(1.05)', opacity: '0.8' } '70%': { transform: 'scale(0.9)', opacity: '0.9' } '100%': { transform: 'scale(1)', opacity: '1' } }
+        @keyframes float { '0%, 100%': { transform: 'translateY(0px)' } '50%': { transform: 'translateY(-10px)' } }
+        @keyframes pulseGlow { '0%, 100%': { boxShadow: '0 0 5px rgba(14, 165, 233, 0.5)' } '50%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.8)' } }
+        @keyframes gradient { '0%, 100%': { background-position: '0% 50%' } '50%': { background-position: '100% 50%' } }
+
+        .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
+        .animate-slide-up { animation: slideUp 0.6s ease-out; }
+        .animate-bounce-in { animation: bounceIn 0.8s ease-out; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
         .bg-gradient-animated {
             background: linear-gradient(-45deg, #0a0e27, #1e3a8a, #2563eb, #0369a1, #0284c7, #0ea5e9, #38bdf8, #0284c7, #1e40af, #1e3a8a, #312e81, #1e1b4b);
             background-size: 400% 400%;
             animation: gradient 8s ease infinite;
         }
-        .animate-float {
-             animation: float 3s ease-in-out infinite;
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .animate-slide-up {
-            animation: slideUp 0.6s ease-out;
-        }
-        .animate-bounce-in {
-            animation: bounceIn 0.8s ease-out;
-        }
+        
         .glass-effect {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        
         .hover-lift {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
         .hover-lift:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+        
         .btn-primary {
             background: linear-gradient(135deg, #1e3a8a, #2563eb, #0ea5e9);
             transition: all 0.3s ease;
         }
+
         .btn-primary:hover {
             background: linear-gradient(135deg, #1e40af, #3b82f6, #38bdf8);
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
-        }
-        .btn-secondary {
-            background: linear-gradient(135deg, #10b981, #059669);
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, #047857, #065f46);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
         }
     </style>
 </head>
@@ -178,7 +149,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-br from-blue-800 via-blue-900 to-purple-900 rounded-lg flex items-center justify-center shadow-lg">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-800 via-blue-900 to-purple-900 rounded-lg flex items-center justify-center animate-pulse-glow shadow-lg">
                         <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 6 L8 26 Q8 27 9 27 L22 27 Q23 27 23 26 L23 11 L18 6 Z" fill="white" opacity="0.9"/>
                             <path d="M25.5 8.5 C25.5 7.5 24.8 6.8 24 6.8 C23.2 6.8 22.5 7.5 22.5 8.5 L22.5 13 C22.5 16.2 23.4 17.5 24 17.5 C24.6 17.5 25.5 16.2 25.5 13 Z" fill="#fbbf24"/>
@@ -224,8 +195,8 @@
         </div>
         
         <!-- Floating Elements -->
-        <div class="floating-element absolute top-20 left-10 w-16 h-16 rounded-full animate-float" style="background: rgba(255, 255, 255, 0.12); border: 2px solid rgba(14, 165, 233, 0.7); box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);"></div>
-        <div class="floating-element absolute bottom-20 right-10 w-12 h-12 rounded-full animate-float" style="background: rgba(255, 255, 255, 0.15); border: 2px solid rgba(37, 99, 235, 0.8); box-shadow: 0 0 20px rgba(37, 99, 235, 0.5); animation-delay: 1s;"></div>
+        <div class="absolute top-20 left-10 w-16 h-16 rounded-full animate-float" style="background: rgba(255, 255, 255, 0.12);"></div>
+        <div class="absolute bottom-20 right-10 w-12 h-12 rounded-full animate-float" style="background: rgba(255, 255, 255, 0.15); animation-delay: 1s;"></div>
     </section>
 
     <!-- Generators Section -->
@@ -237,11 +208,36 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- All 6 generator cards go here -->
+                <!-- Privacy Policy Generator -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 hover-lift">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Privacy Policy</h3>
+                    <p class="text-gray-600 mb-4 md:mb-6">Generate comprehensive privacy policies that comply with GDPR, CCPA, and other international privacy regulations.</p>
+                    <button onclick="openGenerator('privacy')" class="btn-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-xl font-semibold w-full">
+                        Generate Privacy Policy
+                    </button>
+                </div>
+
+                <!-- Terms of Service Generator -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 hover-lift">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Terms of Service</h3>
+                    <p class="text-gray-600 mb-4 md:mb-6">Create professional terms of service agreements that protect your business and define user responsibilities.</p>
+                    <button onclick="openGenerator('terms')" class="btn-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-xl font-semibold w-full">
+                        Generate Terms of Service
+                    </button>
+                </div>
+
+                <!-- Cookie Policy Generator -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 hover-lift">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Cookie Policy</h3>
+                    <p class="text-gray-600 mb-4 md:mb-6">Generate detailed cookie policies that inform users about your website's cookie usage and tracking technologies.</p>
+                    <button onclick="openGenerator('cookie')" class="btn-primary text-white px-5 py-2.5 md:px-6 md:py-3 rounded-xl font-semibold w-full">
+                        Generate Cookie Policy
+                    </button>
+                </div>
             </div>
         </div>
     </section>
-    
+      
     <!-- New Content Section -->
     <section class="py-16 md:py-20 bg-white animate-fade-in" style="animation-delay: 0.2s;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,7 +245,8 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">WebPolicyGenerator: The Legal Pages Your Website Needs</h2>
             </div>
             <div class="max-w-4xl mx-auto text-lg text-gray-600 space-y-6">
-                <!-- Detailed content paragraphs go here -->
+                <p>Running a website means more than only presenting material. You are accumulating names, emails, perhaps payment information—that implies people are depending on you. They are entitled to know how you are using their data.</p>
+                <p>WebPolicyGenerator assists you in producing the legal pages your website should already have. It's quite straightforward; a legislative background is needed.</p>
             </div>
         </div>
     </section>
@@ -262,7 +259,7 @@
                 <p class="text-lg md:text-xl text-gray-600">Get answers to common questions about our legal document generators</p>
             </div>
             <div class="space-y-4 md:space-y-6">
-                <!-- FAQ items go here -->
+                 <!-- FAQ items go here -->
             </div>
         </div>
     </section>
@@ -295,12 +292,20 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 md:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Footer content goes here -->
+             <!-- Footer content goes here -->
         </div>
     </footer>
 
     <script>
-        // All JavaScript for modal, scrolling, etc. goes here
+        function scrollToGenerators() {
+            document.getElementById('generators').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        function openGenerator(type) {
+            // Your generator logic here
+        }
     </script>
 </body>
 </html>
