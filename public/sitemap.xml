@@ -11,18 +11,19 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://webpolicygenerator-tool.vercel.app/about/</loc>
+    <loc>https://webpolicygenerator-tool.vercel.app/about</loc>
     <lastmod>2025-07-28</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://webpolicygenerator-tool.vercel.app/contact/</loc>
+    <loc>https://webpolicygenerator-tool.vercel.app/contact</loc>
     <lastmod>2025-07-28</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://webpolicygenerator-tool.vercel.app/faq/</loc>
+    <loc>https://webpolicygenerator-tool.vercel.app/faq</loc>
     <lastmod>2025-07-28</lastmod>
     <priority>0.80</priority>
   </url>
 </urlset>
+
