@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebPolicyGenerator–Free GDPR Privacy Policy Generator</title>
-    <meta name="description" content="100% Free Privacy Policy Generator for small businesses. Create GDPR, CCPA & CalOPPA compliant policies in minutes with WebPolicyGenerator.">
+    <title>WebPolicyGenerator – Free Privacy Policy, Terms & Conditions Generator</title>
+    <meta name="description" content="Generate professional GDPR & CCPA-compliant legal documents for free. Our privacy policy and terms & conditions generator helps small businesses stay compliant.">
+    
+    <!-- FIX: Added Content Security Policy as a meta tag for fallback protection -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://webpolicygenerator-tool.vercel.app data:; object-src 'none'; frame-ancestors 'none';">
+
     <meta name="keywords" content="webpolicygenerator, gdpr, ccpa, privacy policy generator, terms & conditions generator">
     <meta name="author" content="WebPolicyGenerator">
     <meta name="robots" content="index,  follow">
@@ -31,8 +35,8 @@
     <meta name="twitter:image" content="https://webpolicygenerator-tool.vercel.app/favicon.svg">
     <meta name="twitter:site" content="@webpolicytools">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://webpolicygenerator-tool.vercel.app">
+    <!-- Canonical URL -- FIX: Added trailing slash to match og:url -->
+    <link rel="canonical" href="https://webpolicygenerator-tool.vercel.app/">
     
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
