@@ -12,4 +12,4 @@ Disallow: /private/
 # This is a public tool that should be indexed
 
 # Crawl-delay for respectful crawling
-Crawl-delay: 1
+
