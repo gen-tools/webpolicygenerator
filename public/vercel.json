@@ -15,7 +15,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self' https: data:; script-src 'self' https://cdn.tailwindcss.com https://www.googletagmanager.com https://groleegni.net 'unsafe-inline'; script-src-elem 'self' https://cdn.tailwindcss.com https://www.googletagmanager.com https://groleegni.net; style-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https://www.googletagmanager.com https://groleegni.net; frame-ancestors 'self'; object-src 'none';"
+          "value": "default-src 'self' https: data:; script-src 'self' https: 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https:; frame-ancestors *; object-src 'none';"
         },
         {
           "key": "X-Frame-Options",
